@@ -27,6 +27,9 @@
                                 <rect key="frame" x="-2" y="392" width="324" height="31"/>
                                 <connections>
                                     <action selector="timeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Lke-Np-GGP"/>
+                                    <action selector="timeSliderTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="NWc-7K-O1P"/>
+                                    <action selector="timeSliderTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ECX-E4-ics"/>
+                                    <action selector="timeSliderTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="03j-2b-Y40"/>
                                 </connections>
                             </slider>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-0c-vsf">

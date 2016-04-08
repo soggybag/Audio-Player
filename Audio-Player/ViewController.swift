@@ -17,11 +17,13 @@ class ViewController: UIViewController {
     // Formatting time for display
     let timeFormatter = NSNumberFormatter()
     
-    var audioPlayer: AVAudioPlayer? // holds an audio player instance. This is an optional!
-    var audioTimer: NSTimer?        // holds a timer instance
-    var isPlaying = false {         // keep track of when the player is playing
-        didSet {                    // This is a computed property. Changing the value
-            setButtonState()        // invokes the didSet block
+    var audioPlayer: AVAudioPlayer?     // holds an audio player instance. This is an optional!
+    var audioTimer: NSTimer?            // holds a timer instance
+    var isDraggingTimeSlider = false    // Keep track of when the time slide is being dragged
+    
+    var isPlaying = false {             // keep track of when the player is playing
+        didSet {                        // This is a computed property. Changing the value
+            setButtonState()            // invokes the didSet block
             playPauseAudio()
         }
     }
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
         isPlaying = !isPlaying
     }
     
+    // Update time when dragging the slider
     @IBAction func timeSliderChanged(sender: UISlider) {
         // Working on this 
         // TODO: Implement Time Slider
@@ -54,6 +57,23 @@ class ViewController: UIViewController {
         
         audioPlayer.currentTime = audioPlayer.duration * Double(sender.value)
     }
+    
+    // The time slider is tricky since we want it to update while the player is playing
+    // but it can't be updated while we dragging it!
+    @IBAction func timeSliderTouchDown(sender: UISlider) {
+        isDraggingTimeSlider = true
+    }
+    
+    @IBAction func timeSliderTouchUp(sender: UISlider) {
+        isDraggingTimeSlider = false
+    }
+    
+    @IBAction func timeSliderTouchUpOutside(sender: UISlider) {
+        isDraggingTimeSlider = false
+    }
+    
+    
+    
     
     @IBAction func volumeSliderChanged(sender: UISlider) {
         // Use a guard statement here since audioPlayer is optional
@@ -129,6 +149,10 @@ class ViewController: UIViewController {
         // Everything is cool so update the timeLabel and progress bar
         timeLabel.text = "\(minsStr):\(secsStr)"
         progressBar.progress = Float(percentCompleted)
+        // Check that we aren't dragging the time slider before updating it
+        if !isDraggingTimeSlider {
+            timeSlider.value = Float(percentCompleted)
+        }
     }
     
     

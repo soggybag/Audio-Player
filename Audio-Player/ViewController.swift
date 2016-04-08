@@ -48,6 +48,11 @@ class ViewController: UIViewController {
     @IBAction func timeSliderChanged(sender: UISlider) {
         // Working on this 
         // TODO: Implement Time Slider
+        guard let audioPlayer = audioPlayer else {
+            return
+        }
+        
+        audioPlayer.currentTime = audioPlayer.duration * Double(sender.value)
     }
     
     @IBAction func volumeSliderChanged(sender: UISlider) {
@@ -135,7 +140,7 @@ class ViewController: UIViewController {
         timeFormatter.minimumFractionDigits = 0
         timeFormatter.roundingMode = .RoundDown
         
-        // Load the sound and set up the timer. 
+        // Load the sound and set up the timer.
         queueSound()
         makeTimer()
     }

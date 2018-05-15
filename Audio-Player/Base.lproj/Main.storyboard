@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,42 +18,42 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="w7g-N9-0y9">
-                                <rect key="frame" x="-2" y="442" width="324" height="31"/>
+                                <rect key="frame" x="-2" y="629" width="379" height="31"/>
                                 <connections>
-                                    <action selector="volumeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pzZ-es-lg4"/>
+                                    <action selector="volumeSliderChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="ALQ-UU-DrA"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Arh-0A-Gzs">
-                                <rect key="frame" x="-2" y="392" width="324" height="31"/>
+                                <rect key="frame" x="-2" y="579" width="379" height="31"/>
                                 <connections>
-                                    <action selector="timeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Lke-Np-GGP"/>
-                                    <action selector="timeSliderTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="NWc-7K-O1P"/>
-                                    <action selector="timeSliderTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ECX-E4-ics"/>
-                                    <action selector="timeSliderTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="03j-2b-Y40"/>
+                                    <action selector="timeSliderChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="Efd-47-4PP"/>
+                                    <action selector="timeSliderTouchDownWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="zdQ-Fa-6Jz"/>
+                                    <action selector="timeSliderTouchUpOutsideWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="mCj-EJ-A4q"/>
+                                    <action selector="timeSliderTouchUpWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="K8u-gS-h8G"/>
                                 </connections>
                             </slider>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-0c-vsf">
-                                <rect key="frame" x="0.0" y="365" width="320" height="2"/>
+                                <rect key="frame" x="0.0" y="552" width="375" height="2"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9j-G6-O6R">
-                                <rect key="frame" x="0.0" y="313" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="500" width="375" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c33-bk-YLb"/>
+                                    <action selector="playButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6BG-es-zcX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFb-K3-BlT">
-                                <rect key="frame" x="0.0" y="257" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="444" width="375" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="w7g-N9-0y9" firstAttribute="top" secondItem="Arh-0A-Gzs" secondAttribute="bottom" constant="20" id="C4k-gX-asZ"/>
                             <constraint firstItem="q9j-G6-O6R" firstAttribute="top" secondItem="JFb-K3-BlT" secondAttribute="bottom" constant="8" id="Ebh-5y-bb9"/>
@@ -68,7 +72,6 @@
                             <constraint firstItem="hSA-0c-vsf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wWj-zT-Eog"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="playButton" destination="q9j-G6-O6R" id="uni-a9-fQo"/>
                         <outlet property="progressBar" destination="hSA-0c-vsf" id="dxs-B2-vSC"/>
